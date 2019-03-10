@@ -2090,6 +2090,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getPost();
@@ -38031,87 +38032,90 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "posts" } },
-    [
-      _vm._l(_vm.posts, function(post) {
-        return _c(
-          "p",
-          { staticClass: "border p-3" },
+  return _c("div", { attrs: { id: "posts" } }, [
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "bind-key-for",
+            rawName: "v-bind-key-for",
+            value: _vm.post in _vm.posts,
+            expression: "post in posts"
+          }
+        ],
+        staticClass: "border p-3"
+      },
+      [
+        _vm._v("\n        " + _vm._s(_vm.post.title) + "\n        "),
+        _c(
+          "router-link",
+          {
+            attrs: { to: { name: "update", params: { postId: _vm.post.id } } }
+          },
           [
-            _vm._v("\n        " + _vm._s(post.title) + "\n        "),
-            _c(
-              "router-link",
-              {
-                attrs: { to: { name: "update", params: { postId: post.id } } }
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "p-1 mx-3 float-right btn btn-light",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("\n                Update\n            ")]
-                )
-              ]
-            ),
-            _vm._v(" "),
             _c(
               "button",
               {
-                staticClass: "p-1 mx-3 float-right btn btn-danger",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.deletePost(post.id)
-                  }
-                }
+                staticClass: "p-1 mx-3 float-right btn btn-light",
+                attrs: { type: "button" }
               },
-              [_vm._v("\n            Delete\n        ")]
+              [_vm._v("\n                Update\n            ")]
             )
-          ],
-          1
-        )
-      }),
-      _vm._v(" "),
-      _c("div", [
-        _vm.next
-          ? _c(
-              "button",
-              {
-                staticClass: "m-3 btn btn-primary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.navigate(_vm.next)
-                  }
-                }
-              },
-              [_vm._v("\n          Next\n        ")]
-            )
-          : _vm._e(),
+          ]
+        ),
         _vm._v(" "),
-        _vm.prev
-          ? _c(
-              "button",
-              {
-                staticClass: "m-3 btn btn-primary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.navigate(_vm.prev)
-                  }
+        _c(
+          "button",
+          {
+            staticClass: "p-1 mx-3 float-right btn btn-danger",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.deletePost(_vm.post.id)
+              }
+            }
+          },
+          [_vm._v("\n            Delete\n        ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _vm.next
+        ? _c(
+            "button",
+            {
+              staticClass: "m-3 btn btn-primary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.navigate(_vm.next)
                 }
-              },
-              [_vm._v("\n          Previous\n        ")]
-            )
-          : _vm._e()
-      ])
-    ],
-    2
-  )
+              }
+            },
+            [_vm._v("\n          Next\n        ")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.prev
+        ? _c(
+            "button",
+            {
+              staticClass: "m-3 btn btn-primary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.navigate(_vm.prev)
+                }
+              }
+            },
+            [_vm._v("\n          Previous\n        ")]
+          )
+        : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
