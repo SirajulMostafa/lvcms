@@ -20,3 +20,6 @@ Route::get('/posts/{post}', 'PostController@single');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PostController@all');
 Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
+//brodcast comment router
+Route::get('/{post}/comments', 'CommentController@index');
+Route::post('/{post}/comments', 'CommentController@store');

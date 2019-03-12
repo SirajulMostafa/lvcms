@@ -41,6 +41,7 @@
  import Create from './components/Create'
  import Read from './components/Read'
  import Update from './components/Update'
+ import Comments from './components/Comments'
 
  Vue.use(VueRouter)
 
@@ -71,5 +72,5 @@
  const app = new Vue({
      el: '#app',
      router,
-     components: { Homepage },
+     components: { Homepage,Comments },
  });
